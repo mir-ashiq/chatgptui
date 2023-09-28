@@ -17,6 +17,7 @@ app = FastAPI()
 # logging
 log = logging.getLogger("uvicorn")
 openai.api_key = os.getenv("OPEN_AI_KEY")
+openai.api_base = os.getenv("BASE_URL") #"https://api.waveai.link/v1"
 
 templates_directory = Path(__file__).parent / "templates"
 templates = Jinja2Templates(directory=templates_directory)
